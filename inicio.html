@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Floricultura Flores & Cores</title>
-    <link rel="stylesheet" href="estilo.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
@@ -19,72 +19,102 @@
         <a href="#tipo-de-flores">Tipo de Flores</a>
     </nav>
     <nav class="nav-login">
-        <a href="#cadastro">Cadastro</a>
+        <a href="cadastro.html">Cadastro</a>
         <a href="#login">Login</a>
         <div class="menu-icon" id="menuIcon">&#9776;</div>
     </nav>
 </header>
 
-<div class="menu-lateral" id="menuLateral">
-    <ul>
-        <li><a href="#perfil">Perfil</a></li>
-        <li><a href="#carrinho">Carrinho</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-    </ul>
-    <button class="fechar-menu" id="fecharMenu">&times;</button>
-</div>
-
 <div class="carrossel">
     <div class="imagens">
-        <img src="https://via.placeholder.com/1200x400?text=Flor+1" alt="Flor 1">
-        <img src="https://via.placeholder.com/1200x400?text=Flor+2" alt="Flor 2">
-        <img src="https://via.placeholder.com/1200x400?text=Flor+3" alt="Flor 3">
+        <img src="img/FloriculturaCarrossel2.jpg" alt="Flores 1" style="display: block;">
+        <img src="img/FloriculturaCarrossel2.jpg" alt="Flores 2">
+        <img src="img/FloriculturaCarrossel2.jpg" alt="Flores 3">
     </div>
     <button class="botao" id="prevBtn">&#10094;</button>
     <button class="botao" id="nextBtn">&#10095;</button>
 </div>
+
+<!-- Seção de Flores à Venda -->
+<section class="flores-venda">
+    <h2>Promoções da Semana</h2>
+    <div class="grid-flores">
+        <div class="flor">
+            <img src="img/flor1.jpg" alt="Flor 1">
+            <p>Nome da Flor 1</p>
+            <p>R$ 25,00</p>
+        </div>
+        <div class="flor">
+            <img src="img/flor1.jpg" alt="Flor 2">
+            <p>Nome da Flor 2</p>
+            <p>R$ 30,00</p>
+        </div>
+        <div class="flor">
+            <img src="img/flor1.jpg" alt="Flor 3">
+            <p>Nome da Flor 3</p>
+            <p>R$ 20,00</p>
+        </div>
+        <div class="flor">
+            <img src="img/flor1.jpg" alt="Flor 4">
+            <p>Nome da Flor 4</p>
+            <p>R$ 35,00</p>
+        </div>
+        <div class="flor">
+            <img src="img/flor1.jpg" alt="Flor 5">
+            <p>Nome da Flor 5</p>
+            <p>R$ 25,00</p>
+        </div>
+        <div class="flor">
+            <img src="img/flor1.jpg" alt="Flor 6">
+            <p>Nome da Flor 6</p>
+            <p>R$ 30,00</p>
+        </div>
+        <div class="flor">
+            <img src="img/flor1.jpg" alt="Flor 7">
+            <p>Nome da Flor 7</p>
+            <p>R$ 20,00</p>
+        </div>
+        <div class="flor">
+            <img src="img/flor1.jpg" alt="Flor 8">
+            <p>Nome da Flor 8</p>
+            <p>R$ 35,00</p>
+        </div>
+        <!-- Adicione mais flores conforme necessário -->
+    </div>
+</section>
 
 <footer>
     <p>&copy; 2024 Floricultura Flores & Cores. Todos os direitos reservados.</p>
 </footer>
 
 <script>
+    // Funcionalidade do carrossel
     let index = 0;
     const imagens = document.querySelectorAll('.imagens img');
-    const totalImagens = imagens.length;
-
-    function mostrarImagem(n) {
+    
+    function showImage() {
         imagens.forEach((img, i) => {
-            img.style.display = (i === n) ? 'block' : 'none';
+            img.style.display = (i === index) ? 'block' : 'none';
         });
     }
 
-    function proximaImagem() {
-        index = (index + 1) % totalImagens;
-        mostrarImagem(index);
-    }
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        index = (index + 1) % imagens.length;
+        showImage();
+    });
 
-    document.getElementById('nextBtn').addEventListener('click', proximaImagem);
     document.getElementById('prevBtn').addEventListener('click', () => {
-        index = (index - 1 + totalImagens) % totalImagens;
-        mostrarImagem(index);
+        index = (index - 1 + imagens.length) % imagens.length;
+        showImage();
     });
 
-    // Exibe a primeira imagem ao carregar
-    mostrarImagem(index);
+    // Auto-rotate images
+    setInterval(() => {
+        index = (index + 1) % imagens.length;
+        showImage();
+    }, 6000);
 
-    // Avança automaticamente a cada 6 segundos
-    setInterval(proximaImagem, 6000);
-
-    // Funcionalidade do menu lateral
-    document.getElementById('menuIcon').addEventListener('click', () => {
-        document.getElementById('menuLateral').style.display = 'block';
-    });
-
-    document.getElementById('fecharMenu').addEventListener('click', () => {
-        document.getElementById('menuLateral').style.display = 'none';
-    });
+    showImage(); // Exibe a primeira imagem
 </script>
 
 </body>
