@@ -1,9 +1,22 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fafafa; /* Cor de fundo neutra */
     color: #333;
+}
+
+.teste{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
 }
 
 header {
@@ -249,3 +262,5 @@ button[type="submit"]:hover {
     height: auto; /* Mantém a proporção da imagem */
     border-radius: 5px; /* Bordas arredondadas na imagem */
 }
+
+
