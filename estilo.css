@@ -1,0 +1,212 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa; /* Cor de fundo neutra */
+    color: #333;
+}
+
+header {
+    background-color: #6dbf9f; /* Verde suave */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; /* Espaço entre título e navegação */
+    align-items: center; /* Alinha verticalmente */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0; /* Remove margens do título */
+}
+
+.nav-central {
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    flex-wrap: wrap; /* Permite que os botões se movam para a linha de baixo se necessário */
+    flex: 1; /* Faz com que essa seção ocupe o espaço disponível */
+}
+
+.nav-central a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px; /* Espaçamento entre os botões */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-central a:hover {
+    background-color: #4a9a7a; /* Verde mais escuro para hover */
+}
+
+.nav-login {
+    display: flex; /* Exibe os links de login e cadastro em linha */
+    margin-left: auto; /* Empurra os links para a direita */
+}
+
+.nav-login a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-left: 10px; /* Espaçamento à esquerda */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-login a:hover {
+    background-color: #4a9a7a; /* Verde mais escuro para hover */
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 10px; /* Espaçamento à esquerda do ícone */
+}
+
+.menu-lateral {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #6dbf9f; /* Verde suave */
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-lateral li {
+    margin: 10px 0;
+}
+
+.menu-lateral a {
+    color: white;
+    text-decoration: none;
+}
+
+.fechar-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.carrossel {
+    position: relative;
+    max-width: calc(100% - 40px); /* Largura total menos 40px para espaçamento */
+    height: 300px; /* Altura ajustada para ser menor */
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.imagens {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%; /* Garante que a altura das imagens corresponda ao contêiner */
+}
+
+.imagens img {
+    width: 100%; /* Imagem ocupa 100% da largura do carrossel */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 100%; /* Garante que a imagem não ultrapasse a altura do carrossel */
+    display: none;
+}
+
+.botao {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #d7f9e4; /* Verde muito claro */
+    margin-top: 20px;
+}
+
+.container-login {
+    max-width: 400px; /* Largura máxima do formulário de login */
+    margin: 50px auto; /* Centraliza o formulário na página */
+    padding: 20px;
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-login h2 {
+    text-align: center; /* Centraliza o título */
+    color: #6dbf9f; /* Cor do título */
+}
+
+.campo {
+    margin-bottom: 15px; /* Espaçamento entre os campos */
+}
+
+.campo label {
+    display: block; /* Faz o rótulo ocupar toda a largura */
+    margin-bottom: 5px; /* Espaçamento abaixo do rótulo */
+}
+
+.campo input {
+    width: 100%; /* Campo ocupa toda a largura disponível */
+    padding: 10px;
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+button[type="submit"] {
+    width: 100%; /* Botão ocupa toda a largura disponível */
+    padding: 10px;
+    background-color: #6dbf9f; /* Verde suave */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #4a9a7a; /* Verde mais escuro para hover */
+}
+
+.container-login p {
+    text-align: center; /* Centraliza o texto */
+}
+
+.container-login p a {
+    color: #6dbf9f; /* Cor do link */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.container-login p a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
