@@ -177,7 +177,7 @@ footer {
 }
 
 .campo input {
-    width: 100%; /* Campo ocupa toda a largura disponível */
+    width: 95%; /* Campo ocupa toda a largura disponível */
     padding: 10px;
     border: 1px solid #ccc; /* Borda leve */
     border-radius: 5px; /* Bordas arredondadas */
