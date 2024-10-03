@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Floricultura Flores & Cores</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>Floricultura Flores & Cores</h1>
+    <nav class="nav-central">
+        <a href="index.html#presentes">Presentes</a>
+        <a href="index.html#cestas">Cestas</a>
+        <a href="index.html#arranjos">Arranjos</a>
+        <a href="index.html#buque">Buquê</a>
+        <a href="index.html#tipo-de-flores">Tipo de Flores</a>
+    </nav>
+    <nav class="nav-login">
+        <a href="cadastro.html">Cadastro</a>
+        <a href="#login">Login</a>
+        <div class="menu-icon" id="menuIcon">&#9776;</div>
+    </nav>
+</header>
+
+<div class="menu-lateral" id="menuLateral">
+    <ul>
+        <li><a href="#perfil">Perfil</a></li>
+        <li><a href="#carrinho">Carrinho</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+    </ul>
+    <button class="fechar-menu" id="fecharMenu">&times;</button>
+</div>
+
+<div class="container-login">
+    <h2>Login</h2>
+    <form>
+        <div class="campo">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="campo">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" required>
+        </div>
+        <button type="submit">Entrar</button>
+    </form>
+    <p><a href="cadastro.html">Ainda não tem uma conta? Cadastre-se aqui!</a></p>
+</div>
+
+<footer>
+    <p>&copy; 2024 Floricultura Flores & Cores. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    // Funcionalidade do menu lateral
+    document.getElementById('menuIcon').addEventListener('click', () => {
+        document.getElementById('menuLateral').style.display = 'block';
+    });
+
+    document.getElementById('fecharMenu').addEventListener('click', () => {
+        document.getElementById('menuLateral').style.display = 'none';
+    });
+</script>
+
+</body>
+</html>
