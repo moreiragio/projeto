@@ -1,19 +1,17 @@
 package javaBeans;
 
 public class Usuario extends Conectar {
-    private int pkUser; // Chave primária do usuário
+    private int pkUser; 
     private String nome;
     private String email;
     private String senha;
     private String celular;
-    private String nivel; // Corrigido de "Stringa" para "String"
+    private String nivel; 
 
-    // Método para verificar login
     public boolean getLogin() {
         return email.equals("admin") && senha.equals("1234");
     }
 
-    // Getters e Setters (opcional, mas recomendável)
     public int getPkUser() {
         return pkUser;
     }
