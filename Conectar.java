@@ -7,22 +7,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Conectar {
-    private Connection con; // Variável que armazena a conexão com o banco de dados
-    private String sql; // Variável que armazena os comandos SQL
-    private PreparedStatement ps; // Objeto que prepara o SQL
-    private ResultSet tab; // Armazena um conjunto de registros
-    private final String MeuBanco = "Gerente"; // Nome do banco a ser criado
-    private final String servidor = "jdbc:mysql://localhost:3306"; // Caminho do servidor SQL
-    private final String usuario = "root"; // Nome do usuário do banco SQL
-    private final String senha = ""; // Senha do banco SQL
-    private String statusSQL; // Status da operação SQL
+    private Connection con; 
+    private String sql; 
+    private PreparedStatement ps; 
+    private ResultSet tab;
+    private final String MeuBanco = "Gerente"; 
+    private final String servidor = "jdbc:mysql://localhost:3306"; 
+    private final String usuario = "root"; 
+    private final String senha = "";
+    private String statusSQL; 
 
     public Conectar() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // Carrega o driver JDBC
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
             con = DriverManager.getConnection(servidor, usuario, senha);
-            criarBanco(); // Função que cria o banco de dados
-            statusSQL = null; // Armazena NULL se não houver erros nos comandos SQL
+            criarBanco(); 
+            statusSQL = null; 
         } catch (ClassNotFoundException ex) {
             statusSQL = "Driver JDBC não encontrado! " + ex.getMessage();
         } catch (SQLException ex) {
@@ -32,22 +32,22 @@ public class Conectar {
 
     private void criarBanco() {
         try {
-            sql = "CREATE DATABASE IF NOT EXISTS " + MeuBanco; // Armazena SQL
-            ps = con.prepareStatement(sql); // Prepara o comando
-            ps.executeUpdate(); // Executa o comando SQL
+            sql = "CREATE DATABASE IF NOT EXISTS " + MeuBanco; 
+            ps = con.prepareStatement(sql); 
+            ps.executeUpdate(); 
             
-            sql = "USE " + MeuBanco; // Seleciona o banco de dados
+            sql = "USE " + MeuBanco; 
             ps = con.prepareStatement(sql);
-            ps.executeUpdate(); // Executa o comando SQL dentro do servidor
+            ps.executeUpdate(); 
 
-            statusSQL = null; // Coloca null nas operações bem-sucedidas
+            statusSQL = null; 
         } catch (SQLException err) {
-            statusSQL = "Erro ao executar SQL: " + err.getMessage(); // Houve erros
+            statusSQL = "Erro ao executar SQL: " + err.getMessage(); 
         }
     }
 
     public String getStatusSQL() {
-        return statusSQL; // Retorna o status da operação SQL
+        return statusSQL; 
     }
 }
 
